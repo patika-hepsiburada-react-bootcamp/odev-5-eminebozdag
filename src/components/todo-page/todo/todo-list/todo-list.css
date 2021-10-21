@@ -1,0 +1,21 @@
+.todo-list {
+  height: auto;
+  width: 590px;
+  background-color: #f4f5ff;
+  border-radius: 40px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.todo-list__scroll {
+  max-height: 265px;
+  overflow: scroll;
+}
