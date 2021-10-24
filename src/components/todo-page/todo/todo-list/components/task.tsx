@@ -1,19 +1,28 @@
 import remove from "../../../../../assets/icons/Clear.png";
+import TodoDto from "../../../../../dtos/todoDto";
 import "./task.css";
-//import full from "../../../../../assets/icons/full-check.png";
 
-const Task = () => {
+interface Props {
+  item: TodoDto;
+  onClick(id: string): void;
+  onRemove(id: string): void;
+}
+
+const Task = ({ item, onClick, onRemove }: Props) => {
+  const handleInputClick = () => onClick(item.id);
+  const handleRemoveClick = () => onRemove(item.id);
+
   return (
     <div className="task">
-      <div className="task-check">
+      <div className="task-check" onClick={handleInputClick}>
         <label>
-          <input type="checkbox" checked={true}></input>
-          <p>Do your homework</p>
-          <span className="checkmark"></span>
+          <input type="checkbox" defaultChecked={item.completed} />
+          <p>{item.name}</p>
+          <span className="checkmark" />
         </label>
       </div>
-      <div className="remove">
-        <img src={remove} alt="" />
+      <div className="remove" onClick={handleRemoveClick}>
+        <img src={remove} alt="profile" />
       </div>
     </div>
   );
