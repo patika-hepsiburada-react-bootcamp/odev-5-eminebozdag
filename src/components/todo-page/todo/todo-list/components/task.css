@@ -14,7 +14,38 @@
   cursor: pointer;
 }
 
+.task-check__selected {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.task-check__selected label p {
+  width: 400px;
+  height: 20px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #212121;
+  text-decoration: line-through;
+  margin: 0px;
+  margin-top: 5px;
+  margin-left: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
 .task-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.task-check__selected input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -39,7 +70,17 @@
   border-radius: 20px;
 }
 
+.task-check_.task-check__selected input ~ .checkmark {
+  background-color: #f4f5ff;
+  border-radius: 20px;
+}
+
 .task-check input:checked ~ .checkmark {
+  background-color: #3f51b5;
+  border-radius: 20px;
+}
+
+.task-check__selected input:checked ~ .checkmark {
   background-color: #3f51b5;
   border-radius: 20px;
 }
@@ -54,7 +95,23 @@
   display: block;
 }
 
+.task-check__selected input:checked ~ .checkmark:after {
+  display: block;
+}
+
 .task-check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.task-check__selected .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;

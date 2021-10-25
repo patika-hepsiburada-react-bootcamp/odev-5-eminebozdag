@@ -28,7 +28,7 @@ const Filter = () => {
         return (
           <a
             key={item.text}
-            href="#"
+            href="##"
             className={item.type === filterType ? "selected" : ""}
             onClick={() => dispatch(setFilterType(item.type))}
           >

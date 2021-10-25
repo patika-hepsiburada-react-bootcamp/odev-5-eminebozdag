@@ -14,7 +14,10 @@ const Task = ({ item, onClick, onRemove }: Props) => {
 
   return (
     <div className="task">
-      <div className="task-check" onClick={handleInputClick}>
+      <div
+        className={item.completed ? "task-check__selected" : "task-check"}
+        onClick={handleInputClick}
+      >
         <label>
           <input type="checkbox" defaultChecked={item.completed} />
           <p>{item.name}</p>
